@@ -1,0 +1,45 @@
+# Reading C:/altera/14.1/modelsim_ase/tcl/vsim/pref.tcl
+# do AD_SAR_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/14.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/14.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/altera/14.1/quartus/bin64/AD_SAR/xlatch.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 18:53:27 on Aug 21,2019
+# vcom -reportprogress 300 -93 -work work C:/altera/14.1/quartus/bin64/AD_SAR/xlatch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xlatch
+# -- Compiling architecture save of xlatch
+# End time: 18:53:28 on Aug 21,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/altera/14.1/quartus/bin64/AD_SAR/saadc_fsm.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 18:53:28 on Aug 21,2019
+# vcom -reportprogress 300 -93 -work work C:/altera/14.1/quartus/bin64/AD_SAR/saadc_fsm.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity saadc_fsm
+# -- Compiling architecture rtl of saadc_fsm
+# End time: 18:53:29 on Aug 21,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/altera/14.1/quartus/bin64/AD_SAR/shiftreg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 18:53:29 on Aug 21,2019
+# vcom -reportprogress 300 -93 -work work C:/altera/14.1/quartus/bin64/AD_SAR/shiftreg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shiftreg
+# -- Compiling architecture move of shiftreg
