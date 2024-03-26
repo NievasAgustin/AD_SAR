@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -1.110
+TNS   : -9.390
+
+Type  : Slow 1200mV 85C Model Setup 'SAR:casitodo|saadc_fsm:estados|state.idle'
+Slack : -0.709
+TNS   : -4.867
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.130
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SAR:casitodo|saadc_fsm:estados|state.idle'
+Slack : 0.238
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -22.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SAR:casitodo|saadc_fsm:estados|state.idle'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -0.918
+TNS   : -6.588
+
+Type  : Slow 1200mV 0C Model Setup 'SAR:casitodo|saadc_fsm:estados|state.idle'
+Slack : -0.534
+TNS   : -3.551
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.109
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SAR:casitodo|saadc_fsm:estados|state.idle'
+Slack : 0.237
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -22.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SAR:casitodo|saadc_fsm:estados|state.idle'
+Slack : 0.462
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.137
+TNS   : -0.137
+
+Type  : Fast 1200mV 0C Model Setup 'SAR:casitodo|saadc_fsm:estados|state.idle'
+Slack : 0.084
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SAR:casitodo|saadc_fsm:estados|state.idle'
+Slack : 0.050
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.050
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -23.073
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SAR:casitodo|saadc_fsm:estados|state.idle'
+Slack : 0.386
+TNS   : 0.000
+
+------------------------------------------------------------

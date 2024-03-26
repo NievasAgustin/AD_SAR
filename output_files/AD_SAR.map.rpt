@@ -1,0 +1,368 @@
+Analysis & Synthesis report for AD_SAR
+Wed Aug 21 18:52:28 2019
+Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |AD_SAR|SAR:casitodo|saadc_fsm:estados|state
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Aug 21 18:52:28 2019      ;
+; Quartus II 64-Bit Version          ; 14.1.0 Build 186 12/03/2014 SJ Web Edition ;
+; Revision Name                      ; AD_SAR                                     ;
+; Top-level Entity Name              ; AD_SAR                                     ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 36                                         ;
+;     Total combinational functions  ; 36                                         ;
+;     Dedicated logic registers      ; 19                                         ;
+; Total registers                    ; 19                                         ;
+; Total pins                         ; 21                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                                      ; AD_SAR             ; AD_SAR             ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; xlatch.vhd                       ; yes             ; User VHDL File  ; C:/altera/14.1/quartus/bin64/AD_SAR/xlatch.vhd     ;         ;
+; saadc_fsm.vhd                    ; yes             ; User VHDL File  ; C:/altera/14.1/quartus/bin64/AD_SAR/saadc_fsm.vhd  ;         ;
+; shiftreg.vhd                     ; yes             ; User VHDL File  ; C:/altera/14.1/quartus/bin64/AD_SAR/shiftreg.vhd   ;         ;
+; approx_reg.vhd                   ; yes             ; User VHDL File  ; C:/altera/14.1/quartus/bin64/AD_SAR/approx_reg.vhd ;         ;
+; SAR.vhd                          ; yes             ; User VHDL File  ; C:/altera/14.1/quartus/bin64/AD_SAR/SAR.vhd        ;         ;
+; AD_SAR.vhd                       ; yes             ; User VHDL File  ; C:/altera/14.1/quartus/bin64/AD_SAR/AD_SAR.vhd     ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 36              ;
+;                                             ;                 ;
+; Total combinational functions               ; 36              ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 17              ;
+;     -- 3 input functions                    ; 1               ;
+;     -- <=2 input functions                  ; 18              ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 36              ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 19              ;
+;     -- Dedicated logic registers            ; 19              ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 21              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; reset_bar~input ;
+; Maximum fan-out                             ; 27              ;
+; Total fan-out                               ; 218             ;
+; Average fan-out                             ; 2.25            ;
++---------------------------------------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                               ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+; |AD_SAR                     ; 36 (0)            ; 19 (0)       ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |AD_SAR                                  ; work         ;
+;    |SAR:casitodo|           ; 28 (8)            ; 19 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AD_SAR|SAR:casitodo                     ; work         ;
+;       |approx_reg:registro| ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AD_SAR|SAR:casitodo|approx_reg:registro ; work         ;
+;       |saadc_fsm:estados|   ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AD_SAR|SAR:casitodo|saadc_fsm:estados   ; work         ;
+;       |shiftreg:shifteo|    ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AD_SAR|SAR:casitodo|shiftreg:shifteo    ; work         ;
+;    |xlatch:guarda|          ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |AD_SAR|xlatch:guarda                    ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------+
+; State Machine - |AD_SAR|SAR:casitodo|saadc_fsm:estados|state ;
++---------------+-------------+---------------+----------------+
+; Name          ; state.shift ; state.initial ; state.idle     ;
++---------------+-------------+---------------+----------------+
+; state.idle    ; 0           ; 0             ; 0              ;
+; state.initial ; 0           ; 1             ; 1              ;
+; state.shift   ; 1           ; 0             ; 1              ;
++---------------+-------------+---------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                     ;
++----------------------------------------------------+-------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                       ; Free of Timing Hazards ;
++----------------------------------------------------+-------------------------------------------+------------------------+
+; xlatch:guarda|q[0]                                 ; SAR:casitodo|saadc_fsm:estados|state.idle ; yes                    ;
+; xlatch:guarda|q[1]                                 ; SAR:casitodo|saadc_fsm:estados|state.idle ; yes                    ;
+; xlatch:guarda|q[2]                                 ; SAR:casitodo|saadc_fsm:estados|state.idle ; yes                    ;
+; xlatch:guarda|q[3]                                 ; SAR:casitodo|saadc_fsm:estados|state.idle ; yes                    ;
+; xlatch:guarda|q[4]                                 ; SAR:casitodo|saadc_fsm:estados|state.idle ; yes                    ;
+; xlatch:guarda|q[5]                                 ; SAR:casitodo|saadc_fsm:estados|state.idle ; yes                    ;
+; xlatch:guarda|q[6]                                 ; SAR:casitodo|saadc_fsm:estados|state.idle ; yes                    ;
+; xlatch:guarda|q[7]                                 ; SAR:casitodo|saadc_fsm:estados|state.idle ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                                           ;                        ;
++----------------------------------------------------+-------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 19    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 19    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 7     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |AD_SAR|SAR:casitodo|shiftreg:shifteo|ok[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 21                          ;
+; cycloneiii_ff         ; 19                          ;
+;     CLR               ; 3                           ;
+;     CLR SCLR          ; 8                           ;
+;     CLR SLD           ; 1                           ;
+;     ENA CLR           ; 7                           ;
+; cycloneiii_lcell_comb ; 37                          ;
+;     normal            ; 37                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 17                          ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.46                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
+    Info: Processing started: Wed Aug 21 18:52:02 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AD_SAR -c AD_SAR
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file xlatch.vhd
+    Info (12022): Found design unit 1: xlatch-save
+    Info (12023): Found entity 1: xlatch
+Info (12021): Found 2 design units, including 1 entities, in source file saadc_fsm.vhd
+    Info (12022): Found design unit 1: saadc_fsm-rtl
+    Info (12023): Found entity 1: saadc_fsm
+Info (12021): Found 2 design units, including 1 entities, in source file shiftreg.vhd
+    Info (12022): Found design unit 1: shiftreg-move
+    Info (12023): Found entity 1: shiftreg
+Info (12021): Found 2 design units, including 1 entities, in source file approx_reg.vhd
+    Info (12022): Found design unit 1: approx_reg-registro
+    Info (12023): Found entity 1: approx_reg
+Info (12021): Found 2 design units, including 1 entities, in source file sar.vhd
+    Info (12022): Found design unit 1: SAR-modulacion
+    Info (12023): Found entity 1: SAR
+Warning (12019): Can't analyze file -- file latch.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file ad_sar.vhd
+    Info (12022): Found design unit 1: AD_SAR-todo
+    Info (12023): Found entity 1: AD_SAR
+Info (12127): Elaborating entity "AD_SAR" for the top level hierarchy
+Info (12128): Elaborating entity "SAR" for hierarchy "SAR:casitodo"
+Info (12128): Elaborating entity "saadc_fsm" for hierarchy "SAR:casitodo|saadc_fsm:estados"
+Info (12128): Elaborating entity "shiftreg" for hierarchy "SAR:casitodo|shiftreg:shifteo"
+Info (12128): Elaborating entity "approx_reg" for hierarchy "SAR:casitodo|approx_reg:registro"
+Info (12128): Elaborating entity "xlatch" for hierarchy "xlatch:guarda"
+Warning (10492): VHDL Process Statement warning at xlatch.vhd(19): signal "d_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at xlatch.vhd(14): inferring latch(es) for signal or variable "q", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "q[0]" at xlatch.vhd(14)
+Info (10041): Inferred latch for "q[1]" at xlatch.vhd(14)
+Info (10041): Inferred latch for "q[2]" at xlatch.vhd(14)
+Info (10041): Inferred latch for "q[3]" at xlatch.vhd(14)
+Info (10041): Inferred latch for "q[4]" at xlatch.vhd(14)
+Info (10041): Inferred latch for "q[5]" at xlatch.vhd(14)
+Info (10041): Inferred latch for "q[6]" at xlatch.vhd(14)
+Info (10041): Inferred latch for "q[7]" at xlatch.vhd(14)
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 57 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 36 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4818 megabytes
+    Info: Processing ended: Wed Aug 21 18:52:28 2019
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:56
+
+
