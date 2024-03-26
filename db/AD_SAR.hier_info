@@ -1,0 +1,181 @@
+|AD_SAR
+reset_bar => sar:casitodo.reset_bar
+reset_bar => xlatch:guarda.reset_bar
+soc => sar:casitodo.soc
+comp_in => sar:casitodo.comp_in
+clk => sar:casitodo.clk
+eoc <= sar:casitodo.eoc
+AD_result[0] <= xlatch:guarda.q[0]
+AD_result[1] <= xlatch:guarda.q[1]
+AD_result[2] <= xlatch:guarda.q[2]
+AD_result[3] <= xlatch:guarda.q[3]
+AD_result[4] <= xlatch:guarda.q[4]
+AD_result[5] <= xlatch:guarda.q[5]
+AD_result[6] <= xlatch:guarda.q[6]
+AD_result[7] <= xlatch:guarda.q[7]
+digital_in[0] <= sar:casitodo.result[0]
+digital_in[1] <= sar:casitodo.result[1]
+digital_in[2] <= sar:casitodo.result[2]
+digital_in[3] <= sar:casitodo.result[3]
+digital_in[4] <= sar:casitodo.result[4]
+digital_in[5] <= sar:casitodo.result[5]
+digital_in[6] <= sar:casitodo.result[6]
+digital_in[7] <= sar:casitodo.result[7]
+
+
+|AD_SAR|SAR:casitodo
+reset_bar => saadc_fsm:estados.reset_bar
+reset_bar => shiftreg:shifteo.clr_bar
+reset_bar => approx_reg:registro.reset_bar
+soc => saadc_fsm:estados.soc
+comp_in => approx_reg:registro.en1
+clk => saadc_fsm:estados.clk
+clk => shiftreg:shifteo.clk
+clk => approx_reg:registro.clk
+eoc <= saadc_fsm:estados.eoc
+result[0] <= or_out[0].DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= or_out[1].DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= or_out[2].DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= or_out[3].DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= or_out[4].DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= or_out[5].DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= or_out[6].DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= or_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AD_SAR|SAR:casitodo|saadc_fsm:estados
+clk => state~1.DATAIN
+reset_bar => state~3.DATAIN
+soc => state.DATAB
+soc => Selector0.IN1
+last_bit => Selector0.IN2
+last_bit => Selector1.IN2
+load <= load.DB_MAX_OUTPUT_PORT_TYPE
+en <= en.DB_MAX_OUTPUT_PORT_TYPE
+en2 <= en2.DB_MAX_OUTPUT_PORT_TYPE
+eoc <= eoc.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AD_SAR|SAR:casitodo|shiftreg:shifteo
+clk => ok[0].CLK
+clk => ok[1].CLK
+clk => ok[2].CLK
+clk => ok[3].CLK
+clk => ok[4].CLK
+clk => ok[5].CLK
+clk => ok[6].CLK
+clk => ok[7].CLK
+clr_bar => ok[0].ACLR
+clr_bar => ok[1].ACLR
+clr_bar => ok[2].ACLR
+clr_bar => ok[3].ACLR
+clr_bar => ok[4].ACLR
+clr_bar => ok[5].ACLR
+clr_bar => ok[6].ACLR
+clr_bar => ok[7].ACLR
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+en => ok.OUTPUTSELECT
+en => ok.OUTPUTSELECT
+en => ok.OUTPUTSELECT
+en => ok.OUTPUTSELECT
+en => ok.OUTPUTSELECT
+en => ok.OUTPUTSELECT
+en => ok.OUTPUTSELECT
+en => ok.OUTPUTSELECT
+qout[0] <= ok[0].DB_MAX_OUTPUT_PORT_TYPE
+qout[1] <= ok[1].DB_MAX_OUTPUT_PORT_TYPE
+qout[2] <= ok[2].DB_MAX_OUTPUT_PORT_TYPE
+qout[3] <= ok[3].DB_MAX_OUTPUT_PORT_TYPE
+qout[4] <= ok[4].DB_MAX_OUTPUT_PORT_TYPE
+qout[5] <= ok[5].DB_MAX_OUTPUT_PORT_TYPE
+qout[6] <= ok[6].DB_MAX_OUTPUT_PORT_TYPE
+qout[7] <= ok[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AD_SAR|SAR:casitodo|approx_reg:registro
+reset_bar => ok[0].ACLR
+reset_bar => ok[1].ACLR
+reset_bar => ok[2].ACLR
+reset_bar => ok[3].ACLR
+reset_bar => ok[4].ACLR
+reset_bar => ok[5].ACLR
+reset_bar => ok[6].ACLR
+reset_bar => ok[7].ACLR
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+load => ok.OUTPUTSELECT
+en2 => process_0.IN0
+en1 => process_0.IN1
+clk => ok[0].CLK
+clk => ok[1].CLK
+clk => ok[2].CLK
+clk => ok[3].CLK
+clk => ok[4].CLK
+clk => ok[5].CLK
+clk => ok[6].CLK
+clk => ok[7].CLK
+d[0] => ok.DATAB
+d[1] => ok.DATAB
+d[2] => ok.DATAB
+d[3] => ok.DATAB
+d[4] => ok.DATAB
+d[5] => ok.DATAB
+d[6] => ok.DATAB
+d[7] => ok.DATAB
+qar[0] <= ok[0].DB_MAX_OUTPUT_PORT_TYPE
+qar[1] <= ok[1].DB_MAX_OUTPUT_PORT_TYPE
+qar[2] <= ok[2].DB_MAX_OUTPUT_PORT_TYPE
+qar[3] <= ok[3].DB_MAX_OUTPUT_PORT_TYPE
+qar[4] <= ok[4].DB_MAX_OUTPUT_PORT_TYPE
+qar[5] <= ok[5].DB_MAX_OUTPUT_PORT_TYPE
+qar[6] <= ok[6].DB_MAX_OUTPUT_PORT_TYPE
+qar[7] <= ok[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|AD_SAR|xlatch:guarda
+reset_bar => q[0]$latch.ACLR
+reset_bar => q[1]$latch.ACLR
+reset_bar => q[2]$latch.ACLR
+reset_bar => q[3]$latch.ACLR
+reset_bar => q[4]$latch.ACLR
+reset_bar => q[5]$latch.ACLR
+reset_bar => q[6]$latch.ACLR
+reset_bar => q[7]$latch.ACLR
+le => q[0]$latch.LATCH_ENABLE
+le => q[1]$latch.LATCH_ENABLE
+le => q[2]$latch.LATCH_ENABLE
+le => q[3]$latch.LATCH_ENABLE
+le => q[4]$latch.LATCH_ENABLE
+le => q[5]$latch.LATCH_ENABLE
+le => q[6]$latch.LATCH_ENABLE
+le => q[7]$latch.LATCH_ENABLE
+d_in[0] => q[0]$latch.DATAIN
+d_in[1] => q[1]$latch.DATAIN
+d_in[2] => q[2]$latch.DATAIN
+d_in[3] => q[3]$latch.DATAIN
+d_in[4] => q[4]$latch.DATAIN
+d_in[5] => q[5]$latch.DATAIN
+d_in[6] => q[6]$latch.DATAIN
+d_in[7] => q[7]$latch.DATAIN
+q[0] <= q[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

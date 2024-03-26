@@ -1,0 +1,6 @@
+
+State Machine - |AD_SAR|SAR:casitodo|saadc_fsm:estados|state
+Name state.shift state.initial state.idle 
+state.idle 0 0 0 
+state.initial 0 1 1 
+state.shift 1 0 1 
