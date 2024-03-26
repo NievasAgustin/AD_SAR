@@ -1,0 +1,57 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity approx_reg is
+
+	port(
+		reset_bar,load,en2,en1,clk : in std_logic;
+		d:in std_logic_vector(7 downto 0);
+		qar : out std_logic_vector(7 downto 0));
+	);
+
+end entity; 
+
+architecture x of approx_reg is
+
+
+--	type state_type is (set, shift, reset);
+
+--	signal state   : state_type;
+
+begin		
+
+	process (clk, clr_bar, load)	
+	begin
+		variable ok:std_logic_vector(7 downto 0);
+	if (clr_bar='0') then
+			ok:="00000000";--state<=reset;
+		elsif (rising_edge(clk)) then
+			if (load = '1') then
+				ok := "10000000";--state<=set;
+			elsif (en= '1') then
+					for i in 7 downto 0 loop
+							ok(i-1):=ok(i);
+						end loop;--state<=shift;
+						ok(7) := '0';		
+			end if;
+		end if;	
+	qout<=ok;
+	end process;
+
+
+	--process (state)
+	--begin
+	--	case state is
+	--		when set =>
+	--			qout <= "10000000";
+	--			
+	--		when shift =>
+	--			for i in 7 downto 1 loop
+	--						qout(i-1)<=qout(i);
+	--					end loop;
+	--		when reset =>
+	--			qout<="00000000";
+	--	end case;
+	--end process;
+
+end architecture;

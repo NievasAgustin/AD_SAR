@@ -1,0 +1,52 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity SAR is
+
+	port(
+		reset_bar,soc,comp_in,clk : in std_logic;
+		eoc:out std_logic;
+		result : out std_logic_vector(7 downto 0)
+		);
+end entity; 
+
+architecture modulacion of SAR is
+	signal load_signal 		: std_logic;
+	signal en_signal 			: std_logic;
+	signal en2_signal 		: std_logic;
+	signal qout_signal 		: std_logic_vector (7 downto 0);
+	signal qar_signal 		: std_logic_vector (7 downto 0);
+	signal or_out 				: std_logic_vector (7 downto 0);
+	
+begin		
+	estados:	entity work.saadc_fsm port map(	clk => clk,
+											reset_bar => reset_bar,
+											soc => soc,
+											last_bit => qout_signal(0),
+											load => load_signal,
+											en => en_signal,
+											en2 => en2_signal,	
+											eoc => eoc
+				 );
+
+	shifteo: entity work.shiftreg port map(	clk => clk,
+											clr_bar => reset_bar,
+											load => load_signal,
+											en => en_signal,
+											qout=> qout_signal
+				);
+				
+	registro: entity work.approx_reg port map(clk => clk,
+											reset_bar => reset_bar,
+											load => load_signal,
+											en1 => comp_in,
+											en2 => en2_signal,
+											qar=> qar_signal,	
+											d=> or_out
+				);
+	
+	or_out <= qout_signal OR qar_signal; 
+	
+	result <= or_out;
+	
+
+end modulacion;
